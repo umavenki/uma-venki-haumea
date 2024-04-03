@@ -1,0 +1,30 @@
+body{
+
+    background-color: rgb(237, 245, 245);
+    color:rgb(2, 2, 87); 
+    padding: 5%;
+}
+h2 {
+    text-align: justify;
+    color: blueviolet;
+}
+#About {
+    font-family: "Dosis", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}
+#name {
+    font-family : 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size : 2rem;
+}
+#Qualifications ul li {
+     display: inline;
+     margin: o.5em;
+     background-color: rgb(246, 79, 79);
+     color: aliceblue;
+     padding: 0.5em;
+     border-radius: 0.6em;
+     border-color: rgb(4, 242, 163);
+     border-style: solid;
+}
