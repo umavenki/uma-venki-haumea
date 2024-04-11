@@ -1,0 +1,54 @@
+body{
+
+    background-color: rgb(237, 245, 245);
+    color:rgb(2, 2, 87); 
+    padding: 5%;
+    font-family: 'Times New Roman', Times, serif;
+    height: 90vh;
+}
+h2 {
+    text-align: justify;
+    color: rgb(97, 4, 77);
+    font-size: 1.7em;
+
+
+}
+#About {
+    font-family: "Dosis", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 1.2em;
+
+}
+#name {
+    font-family :Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size : 3rem;
+    padding-top: 1px;
+}
+#Experience ul li {
+     display: flexbox;
+     margin: 5px 0 0 0;
+     background-color: #0aa9f3;
+     color: aliceblue;
+     padding: 5px;
+     border-radius: 0.6em;
+     border: solid 5px rgb(100, 100, 242);
+     
+}
+#Connect ul li {
+    display: flexbox;
+    padding: 20px;
+    border: solid 5px rgb(100, 100, 242);
+    color:aliceblue;
+    background-color: #0aa9f3;
+    margin: 10px 0 0 0;
+    border-radius: 0.6em;
+    text-align:inherit;
+
+}
+#Connect ul li img{
+    width: 25px;
+    display:table-column;
+    margin: 15px 8px 0 0;
+}
