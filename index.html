@@ -84,6 +84,46 @@
         </li>
       </ul>
     </section>
-    <script src="js/index.js"></script>
+
+    <section id="message-form-section">
+      <h2>Leave a Message</h2>
+      <form name="leave_message" class="message-form">
+        <label for="usersName">Name:</label>
+        <input
+          type="text"
+          name="usersName"
+          id="usersName"
+          required="true"
+        /><br />
+        <label for="usersEmail">Email:</label>
+        <input
+          type="email"
+          name="usersEmail"
+          id="usersEmail"
+          required="true"
+        /><br />
+        <label for="usersMessage">Message:</label>
+        <textarea
+          name="usersMessage"
+          id="usersMessage"
+          rows="2"
+          required="true"
+        ></textarea
+        ><br />
+        <button
+          type="submit"
+          value="submit"
+          name="submit"
+          class="submit-button"
+        >
+          Submit
+        </button>
+      </form>
+    </section>
+    <section id="messages-section">
+      <h2>Messages</h2>
+      <ul id="message"></ul>
+    </section>
+    <script src="js/index.js" defer></script>
   </body>
 </html>
