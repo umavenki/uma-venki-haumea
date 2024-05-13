@@ -58,3 +58,27 @@ messageForm.addEventListener("submit", (event) => {
 
   messageForm.reset();
 });
+
+const projectsSection = document.querySelector("#projects");
+const projectsList = projectsSection.querySelector("ul");
+
+fetch("https://api.github.com/users/umavenki/repos")
+  .then((response) => {
+    console.log(response);
+    if (!response.ok) {
+      throw new Error("Invalid request");
+    }
+    return response.json();
+  })
+  .then((data) => {
+    for (let i = 0; i < data.length; i++) {
+      const project = document.createElement("li");
+      project.innerText = data[i].name;
+      projectsList.appendChild(project);
+    }
+  })
+  .catch((error) => {
+    const errorElement = document.createElement("p");
+    errorElement.innerText = error.message;
+    projectsSection.appendChild(errorElement);
+  });
