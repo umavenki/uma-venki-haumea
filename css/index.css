@@ -1,16 +1,21 @@
-#navigation ul {
+* {
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  background-color: #c6e7f7;
   display: flex;
   gap: 3em;
-  padding: 0%;
-  font-size: 1.5em;
-  list-style: none;
-}
-#navigation {
-  position: fixed;
-  top: 0;
   width: 100%;
-  background-color: rgb(237, 245, 245);
+  font-size: 1.5em;
+  padding: 1rem;
 }
+section {
+  margin-top: 1rem;
+  padding: 1rem;
+}
+
 #about,
 #experience,
 #skills,
@@ -18,8 +23,19 @@
 #connect {
   scroll-margin-top: 100px;
 }
+a {
+  color: black;
+}
 a:hover {
   opacity: 0.4;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  background-color: #bdeaff;
 }
 
 #name {
@@ -27,6 +43,8 @@ a:hover {
   font-size: 2.5rem;
   padding-top: 0.25em;
   margin: 0;
+  display: flex;
+  align-items: center;
 }
 h2 {
   text-align: justify;
@@ -36,7 +54,7 @@ h2 {
 body {
   background-color: rgb(237, 245, 245);
   color: rgb(2, 2, 87);
-  padding: 5%;
+  padding-top: 4rem;
   font-family: "Times New Roman", Times, serif;
   height: 90vh;
   margin: 0;
@@ -50,15 +68,15 @@ body {
   font-size: 1.2em;
 }
 
-#profile-picture {
+#name img {
   width: 200px;
   height: 200px;
   object-fit: cover;
   display: flex;
 }
+
 #skills {
   font-size: 20px;
-  padding: 0;
   gap: 10px;
 }
 .grid-container {
@@ -71,11 +89,11 @@ body {
   flex-direction: column;
   justify-content: center;
   font-weight: 200;
-  background-color: #0aa9f3;
-  color: aliceblue;
+  background-color: #c6e7f7;
+  color: rgb(44, 46, 47);
   padding: 5px;
   border-radius: 0.6em;
-  border: solid 5px rgb(100, 100, 242);
+  border: solid 1px #7dbddb;
 }
 .grid-item div {
   display: flex;
@@ -87,9 +105,9 @@ h3 {
 }
 #Connect ul li {
   padding: 20px;
-  border: solid 5px rgb(100, 100, 242);
+  border: solid 1px #7dbddb;
   color: aliceblue;
-  background-color: #0aa9f3;
+  background-color: #c6e7f7;
   margin: 10px 0 0 0;
   border-radius: 0.6em;
   text-align: inherit;
@@ -121,7 +139,7 @@ ul {
   gap: 5px;
 }
 button {
-  background-color: #0aa9f3;
+  background-color: #c6e7f7;
   border-radius: 0.6em;
 }
 .message-item {
@@ -133,21 +151,45 @@ button {
 footer {
   padding: 5px;
 }
-#Hamburger {
+#mobile-menu-button {
+  display: none;
+  height: 2rem;
+  width: 3rem;
+  border: none;
+  background-color: transparent;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+}
+.hidden {
   display: none;
 }
+
+header svg {
+  height: 100%;
+  width: 100%;
+}
+header svg path {
+  color: rgb(11, 7, 7);
+}
+header svg line {
+  stroke: rgb(11, 7, 7);
+}
+
 @media screen and (max-width: 650px) {
-  #Hamburger {
+  #mobile-menu-button {
     display: inline;
   }
-  #navigation ul {
-    /*display: none;*/
+  nav {
     flex-direction: column;
     gap: 8px;
     text-align: center;
   }
   body {
-    background-color: rgb(151, 241, 241);
-    padding-top: 16em;
+    background-color: rgb(233, 247, 247);
+    padding-top: 4rem;
+  }
+  .mobile-hidden {
+    display: none;
   }
 }

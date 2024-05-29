@@ -58,3 +58,57 @@ messageForm.addEventListener("submit", (event) => {
 
   messageForm.reset();
 });
+
+const projectsSection = document.querySelector("#projects");
+const projectsList = projectsSection.querySelector("ul");
+
+fetch("https://api.github.com/users/umavenki/repos")
+  .then((response) => {
+    console.log(response);
+    if (!response.ok) {
+      throw new Error("Invalid request");
+    }
+    return response.json();
+  })
+  .then((data) => {
+    for (let i = 0; i < data.length; i++) {
+      const project = document.createElement("li");
+      project.innerText = data[i].name;
+      projectsList.appendChild(project);
+    }
+  })
+  .catch((error) => {
+    const errorElement = document.createElement("p");
+    errorElement.innerText = error.message;
+    projectsSection.appendChild(errorElement);
+  });
+
+// Get the button and the mobile nav menu
+const header = document.querySelector("header");
+const navbar = header.querySelector("nav");
+const mobileMenuBtn = header.querySelector("#mobile-menu-button");
+const openMobileMenuIcon = header.querySelector("#open-mobile-menu-icon");
+const closeMobileMenuIcon = header.querySelector("#close-mobile-menu-icon");
+const navLinks = navbar.querySelectorAll("a");
+
+mobileMenuBtn.addEventListener("click", () => {
+  if (navbar.classList.contains("mobile-hidden")) {
+    // Show the mobile nav menu
+    navbar.classList.remove("mobile-hidden");
+    openMobileMenuIcon.classList.add("hidden");
+    closeMobileMenuIcon.classList.remove("hidden");
+  } else {
+    // Hide the mobile nav menu
+    navbar.classList.add("mobile-hidden");
+    closeMobileMenuIcon.classList.add("hidden");
+    openMobileMenuIcon.classList.remove("hidden");
+  }
+});
+navLinks.forEach((link) => {
+  link.addEventListener("click", () => {
+    // Hide the mobile nav menu
+    navbar.classList.add("mobile-hidden");
+    closeMobileMenuIcon.classList.add("hidden");
+    openMobileMenuIcon.classList.remove("hidden");
+  });
+});
